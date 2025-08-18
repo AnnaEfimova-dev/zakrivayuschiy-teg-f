@@ -12,12 +12,12 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font), sans-serif;
-  font-variation-settings: var(-main-wght);
+  font-family: var(--main-font, sans-serif);
+  font-variation-settings: var(-main-wght, 410);
   background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
-  color: var(--color-accent);
+  color: var(--color-accent, #000000);
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -33,13 +33,13 @@
   align-items: center;
   inline-size: var(--header-inline-size);
   block-size: 368px;
-  border: var(--main-border);
-  background-color: var(--bg-accent);
+  border: var(--main-border, 2px solid #000000);
+  background-color: var(--bg-accent, #ffffff);
 }
 
 .accent-logo {
   /*Лого страницы */
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, serif);
   font-size: var(--text-logo);
   font-weight: 400;
   line-height: var(--text-lh);
@@ -58,7 +58,7 @@
 
 .decorated-text {
   /*Стили заголовка*/
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, serif);
   font-weight: 400;
   text-transform: uppercase;
   line-height: var(--text-lh);
@@ -82,23 +82,23 @@
 
 .card {
   /*Карточка*/
-  border: var(--main-border);
+  border: var(--main-border, 2px solid #000000);
 }
 
 .card-title {
   /*Заголовок карточки*/
-  font-family: var(--main-font);
+  font-family: var(--main-font, sans-serif);
   font-weight: var(--accent-wght);
   font-size: var(--text-main);
   line-height: 122%;
   padding: 4px 10px 4px 10px;
-  background-color: var(--bg-accent);
+  background-color: var(--bg-accent, #ffffff);
 }
 
 .card-image-wrapper {
   /*Обертка для картинки*/
   position: relative;
-  border: var(--card-border);
+  border: var(--card-border, 2px 0px 2px 0px solid #000000);
   block-size: 700px;
 }
 
@@ -170,7 +170,7 @@
   flex-direction: column;
   gap: 25px;
   padding: var(--padding-card-description);
-  background-color: var(--bg-accent);
+  background-color: var(--bg-accent, #ffffff);
 }
 
 .card-text-description {
@@ -195,7 +195,7 @@
   align-items: center;
   cursor: pointer;
   background-color: transparent;
-  border: var(--accent-border);
+  border: var(--accent-border, 2px solid transparent);
   transition: border-color 0.3s ease;
   inline-size: 39px;
   block-size: 36px;
@@ -207,7 +207,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--color-accent);
+  border-color: var(--color-accent, #000000);
 }
 
 .like-icon {
@@ -222,7 +222,7 @@
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #FF0000);
   transition-duration: 0.3s;
   transition-delay: 0.06s;
 }
@@ -233,17 +233,17 @@
 }
 
 .like-icon:hover .main-body {
-  fill: var(--main-contour-color);
+  fill: var(--main-contour-color, #000000);
   transition-delay: 0.05s;
 }
 
 .like-icon:active .main-body {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #FF0000);
   transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #FF0000);
   transition-delay: 0.05s;
 }
 
@@ -254,17 +254,17 @@
 }
 
 .like-icon:hover .core {
-  fill: var(--main-contour-color);
+  fill: var(--main-contour-color, #000000);
   transition-delay: 0s;
 }
 
 .like-icon:active .core {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #FF0000);
   transition-delay: 0s;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #FF0000);
   transition-delay: 0s;
 }
 
@@ -284,14 +284,14 @@
 .button {
   /*Общие стили для кнопок*/
   position: relative;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, serif);
   font-size: var(--accent-text);
   line-height: var(--text-lh-button);
-  border: var(--main-border);
+  border: var(--main-border, 2px solid #000000);
   cursor: pointer;
   overflow: hidden;
-  background-color: var(--bg-accent);
-  color: var(--color-accent);
+  background-color: var(--bg-accent, #ffffff);
+  color: var(--color-accent, #000000);
 }
 
 .button:focus {
@@ -299,7 +299,7 @@
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--color-accent);
+  box-shadow: 2px 2px 0 0 var(--color-accent, #000000);
   transition: box-shadow 0.3s ease;
 }
 
@@ -307,7 +307,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent, #000000);
   translate: -100%;
   transition: translate 0.5s ease-in-out;
   z-index: 0;
@@ -327,7 +327,7 @@
 
 .button__text {
   /*Текс кнопки карточки*/
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, serif);
   color: var(--bg-accent);
   font-size: var(--accent-text);
   font-weight: 400;
@@ -354,7 +354,7 @@
   /*Иконка в кнопке Сохранить на память*/
   inline-size: 21px;
   block-size: 21px;
-  color: var(--bg-accent);
+  color: var(--bg-accent, #ffffff);
   mix-blend-mode: difference;
 }
 
@@ -362,7 +362,7 @@
   /*Диалоговое окно*/
   position: fixed;
   inset: 0;
-  border: var(--main-border);
+  border: var(--main-border, 2px solid #000000);
   padding: var(--padding-dialog);
   max-inline-size: 350px;
 }
@@ -392,8 +392,8 @@
 
 .dialog-text {
   /*Текст в окне диалога*/
-  font-family: var(--accent-font);
-  color: var(--color-accent);
+  font-family: var(--accent-font, serif);
+  color: var(--color-accent, #000000);
   font-size: var(--accent-text);
   font-weight: 400;
   line-height: var(--text-lh-dialog);

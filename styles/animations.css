@@ -13,14 +13,14 @@
 @keyframes scale-heart {
   from {
     transform: scale(1);
-}
+  }
   to {
     transform: scale(1.25);
   }
 }
 
-@keyframes sparks-heart {  
+@keyframes sparks-heart {
   to {
     fill-opacity: 1;
-}
+  }
 }
