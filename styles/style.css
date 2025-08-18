@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -13,4 +12,448 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: var(-main-wght);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.header {
+  /*Шапка страницы*/
+  margin-top: 100px;
+  margin-bottom: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  inline-size: var(--header-inline-size);
+  block-size: 368px;
+  border: var(--main-border);
+  background-color: var(--bg-accent);
+}
+
+.accent-logo {
+  /*Лого страницы */
+  font-family: var(--accent-font);
+  font-size: var(--text-logo);
+  font-weight: 400;
+  line-height: var(--text-lh);
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  padding-top: var(--padding-logo-justify);
+  padding-left: var(--padding-logo-align);
+  padding-right: var(--padding-logo-align);
+}
+
+.header-title {
+  /*Заголовок h1*/
+  padding-bottom: var(--padding-logo-justify);
+  font-size: var(--text-decorated);
+}
+
+.decorated-text {
+  /*Стили заголовка*/
+  font-family: var(--accent-font);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: var(--text-lh);
+}
+
+.card-content {
+  /*Секция main*/
+  margin-bottom: 100px;
+}
+
+.card-list {
+  /*Список карточек*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  inline-size: var(--header-inline-size);
+  margin-bottom: 50px;
+}
+
+.card {
+  /*Карточка*/
+  border: var(--main-border);
+}
+
+.card-title {
+  /*Заголовок карточки*/
+  font-family: var(--main-font);
+  font-weight: var(--accent-wght);
+  font-size: var(--text-main);
+  line-height: 122%;
+  padding: 4px 10px 4px 10px;
+  background-color: var(--bg-accent);
+}
+
+.card-image-wrapper {
+  /*Обертка для картинки*/
+  position: relative;
+  border: var(--card-border);
+  block-size: 700px;
+}
+
+.card-watermark {
+  /*Лейбл*/
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: var(--accent-text);
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: 1px 1px #ffffff, -1px -1px #ffffff, -1px 1px #ffffff,
+    1px -1px #ffffff;
+  z-index: 2;
+}
+
+@supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
+  .card-watermark {
+    -webkit-text-stroke: var(--text-stroke);
+    text-stroke: var(--text-stroke);
+    text-shadow: none;
+  }
+}
+
+.card-image {
+  /*Картинка карточки*/
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.card-notebook {
+  filter: grayscale(25%) contrast(70%);
+}
+
+.card-numbers {
+  filter: hue-rotate(-340deg) contrast(70%);
+}
+
+.card-woman {
+  filter: opacity(0.8) contrast(70%);
+}
+
+.card-window {
+  filter: invert(1.1) contrast(70%);
+}
+
+.card-tea {
+  filter: blur(0.1rem) contrast(80%);
+}
+
+.card-bench {
+  filter: brightness(150%) contrast(70%);
+}
+
+.card-balance {
+  filter: sepia(80%) contrast(70%);
+}
+
+.card-frames {
+  filter: saturate(180%) contrast(70%);
+}
+
+.card-description {
+  /*Обертка текста и кнопки*/
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: var(--padding-card-description);
+  background-color: var(--bg-accent);
+}
+
+.card-text-description {
+  /*Параграф карточки*/
+  font-family: var(--main-font);
+  font-weight: var(--main-wght);
+  font-size: var(--text-main);
+  line-height: var(--text-lh-accent);
+}
+
+.card-button-wrapper {
+  /*Обертка для кнопок*/
+  display: flex;
+  justify-content: end;
+  gap: 7px;
+}
+
+.card__icon-button {
+  /*Кнопка иконки сердечка*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: var(--accent-border);
+  transition: border-color 0.3s ease;
+  inline-size: 39px;
+  block-size: 36px;
+  padding: 0px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.like-icon {
+  inline-size: 39px;
+  block-size: 36px;
+  transform-origin: center;
+}
+
+.contour {
+  /*Контур иконки сердечка*/
+  transition: fill 0.1s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--contour-color);
+  transition-duration: 0.3s;
+  transition-delay: 0.06s;
+}
+
+.main-body {
+  /*Основное тело иконки сердечка*/
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--main-contour-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--contour-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--contour-color);
+  transition-delay: 0.05s;
+}
+
+.core {
+  /*Cердцевина иконки сердечка*/
+  transition: fill 0.3s linear;
+  transition-delay: 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--main-contour-color);
+  transition-delay: 0s;
+}
+
+.like-icon:active .core {
+  fill: var(--contour-color);
+  transition-delay: 0s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--contour-color);
+  transition-delay: 0s;
+}
+
+.sparks {
+  /*Искры вокруг иконки сердечка*/
+  fill-opacity: 0;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale-heart 0.3s 0.1s ease-in 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-heart 0.3s 0.3s ease-in 1;
+}
+
+.button {
+  /*Общие стили для кнопок*/
+  position: relative;
+  font-family: var(--accent-font);
+  font-size: var(--accent-text);
+  line-height: var(--text-lh-button);
+  border: var(--main-border);
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--bg-accent);
+  color: var(--color-accent);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--color-accent);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent);
+  translate: -100%;
+  transition: translate 0.5s ease-in-out;
+  z-index: 0;
+  display: block;
+}
+
+.button:hover::before {
+  translate: 0%;
+}
+
+.card__like-button {
+  /*Кнопка карточки*/
+  inline-size: 130px;
+  block-size: 38px;
+  align-self: flex-end;
+}
+
+.button__text {
+  /*Текс кнопки карточки*/
+  font-family: var(--accent-font);
+  color: var(--bg-accent);
+  font-size: var(--accent-text);
+  font-weight: 400;
+  line-height: var(--text-lh-button);
+  mix-blend-mode: difference;
+}
+
+.button__text-accent {
+  top: 12px;
+  left: 35px;
+}
+
+.icon-button {
+  /*Кнопка Сохранить на память*/
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 18px;
+}
+
+.floppy {
+  /*Иконка в кнопке Сохранить на память*/
+  inline-size: 21px;
+  block-size: 21px;
+  color: var(--bg-accent);
+  mix-blend-mode: difference;
+}
+
+.dialog {
+  /*Диалоговое окно*/
+  position: fixed;
+  inset: 0;
+  border: var(--main-border);
+  padding: var(--padding-dialog);
+  max-inline-size: 350px;
+}
+
+.dialog[open] {
+  display: grid;
+  row-gap: 30px;
+}
+
+.dialog::backdrop {
+  background-color: #000000bf;
+}
+
+.dialog-wrapper {
+  /*Обертка в диалоговом окне*/
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  gap: 16px;
+}
+
+.dialog-floppy {
+  /*Иконка в окне диалога*/
+  inline-size: 39px;
+  block-size: 39px;
+  margin-top: 9px;
+}
+
+.dialog-text {
+  /*Текст в окне диалога*/
+  font-family: var(--accent-font);
+  color: var(--color-accent);
+  font-size: var(--accent-text);
+  font-weight: 400;
+  line-height: var(--text-lh-dialog);
+  text-transform: uppercase;
+}
+
+.dialog-close {
+  /*Кнопка в окне диалога*/
+  block-size: 38px;
+  text-transform: uppercase;
+}
+
+@media (width <= 375px) and (orientation: portrait) {
+  .header {
+    /*Шапка страницы*/
+    block-size: 327px;
+    margin-bottom: 100px;
+  }
+
+  .card-content {
+    /*Секция main*/
+    gap: 50px;
+  }
+
+  .card-image-wrapper {
+    /*Обертка для картинки*/
+    block-size: 375px;
+  }
+
+  .dialog-wrapper {
+    /*Обертка в диалоговом окне*/
+    column-gap: 18px;
+  }
+
+  .icon-button {
+    /*Кнопка Сохранить на память*/
+    flex-direction: column;
+    justify-self: center;
+  }
+
+  .floppy {
+    /*Иконка в кнопке Сохранить на память*/
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .dialog {
+    /*Диалоговое окно*/
+    max-inline-size: 341px;
+    padding: var(--padding-dialog-accent);
+    bottom: -216px;
+  }
+
+  .dialog[open] {
+    row-gap: 26px;
+  }
+
+  .dialog-close {
+    /*Кнопка в окне диалога*/
+    inline-size: 100%;
+    block-size: 38px;
+  }
 }
