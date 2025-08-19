@@ -4,16 +4,13 @@
     --accent-font: 'PressStart2P-Regular';
     --main-wght: 410;
     --accent-wght: 715;
-
     --header-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
     --bg-image:
     repeating-linear-gradient(to right, #d3d3d3, transparent 4px),
     repeating-linear-gradient(to bottom, #d3d3d3, transparent 4px),
     linear-gradient(to bottom, #e7e7e7, #1a1a1a);
-
     --bg-accent: #ffffff;
     --color-accent: #000000;
-
     --text-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem); /* 49 и 65*/
     --text-decorated: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem); /* 14 и 23*/
     --text-main: 18px;  /* заголовок карточки и параграф*/
@@ -27,12 +24,10 @@
     --padding-card-description: 25px;
     --padding-dialog: 30px;
     --padding-dialog-accent: 30px 40px;
-    
     --main-border: 2px solid var(--color-accent);
     --accent-border: 2px solid transparent;
     --card-border: 2px 0px 2px 0px solid var(--color-accent);
     --text-stroke: 1px var(--bg-accent);
-
     --contour-color: #FF0000;
     --main-contour-color: var(--color-accent);
 }
