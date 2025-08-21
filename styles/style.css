@@ -12,8 +12,8 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, sans-serif);
-  font-variation-settings: var(-main-wght, 410);
+  font-family: var(--main-font, sans-serif), sans-serif;
+  font-variation-settings: var(--main-wght, "wght" 410);
   background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
@@ -39,7 +39,7 @@
 
 .accent-logo {
   /*Лого страницы */
-  font-family: var(--accent-font, serif);
+  font-family: var(--accent-font, serif), serif;
   font-size: var(--text-logo);
   font-weight: 400;
   line-height: var(--text-lh);
@@ -58,7 +58,7 @@
 
 .decorated-text {
   /*Стили заголовка*/
-  font-family: var(--accent-font, serif);
+  font-family: var(--accent-font, serif), serif;
   font-weight: 400;
   text-transform: uppercase;
   line-height: var(--text-lh);
@@ -87,8 +87,8 @@
 
 .card-title {
   /*Заголовок карточки*/
-  font-family: var(--main-font, sans-serif);
-  font-weight: var(--accent-wght);
+  font-family: var(--main-font, sans-serif), sans-serif;
+  font-variation-settings: var(--accent-wght, "wght" 715);
   font-size: var(--text-main);
   line-height: 122%;
   padding: 4px 10px 4px 10px;
@@ -98,7 +98,8 @@
 .card-image-wrapper {
   /*Обертка для картинки*/
   position: relative;
-  border: var(--card-border, 2px 0px 2px 0px solid #000000);
+  border-top: 2px solid var(--color-accent, #000000);
+  border-bottom: 2px solid var(--color-accent, #000000);
   block-size: 700px;
 }
 
@@ -175,8 +176,8 @@
 
 .card-text-description {
   /*Параграф карточки*/
-  font-family: var(--main-font);
-  font-weight: var(--main-wght);
+  font-family: var(--main-font, sans-serif), sans-serif;
+  font-variation-settings: var(--main-wght, "wght" 410);
   font-size: var(--text-main);
   line-height: var(--text-lh-accent);
 }
@@ -213,7 +214,6 @@
 .like-icon {
   inline-size: 39px;
   block-size: 36px;
-  transform-origin: center;
 }
 
 .contour {
@@ -222,7 +222,7 @@
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--contour-color, #FF0000);
+  fill: var(--contour-color, #ff0000);
   transition-duration: 0.3s;
   transition-delay: 0.06s;
 }
@@ -238,12 +238,12 @@
 }
 
 .like-icon:active .main-body {
-  fill: var(--contour-color, #FF0000);
+  fill: var(--contour-color, #ff0000);
   transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--contour-color, #FF0000);
+  fill: var(--contour-color, #ff0000);
   transition-delay: 0.05s;
 }
 
@@ -259,12 +259,12 @@
 }
 
 .like-icon:active .core {
-  fill: var(--contour-color, #FF0000);
+  fill: var(--contour-color, #ff0000);
   transition-delay: 0s;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--contour-color, #FF0000);
+  fill: var(--contour-color, #ff0000);
   transition-delay: 0s;
 }
 
@@ -275,16 +275,18 @@
 
 .like-icon.is-liked .heart {
   animation: scale-heart 0.3s 0.1s ease-in 1;
+  transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
   animation: sparks-heart 0.3s 0.3s ease-in 1;
+  transform-origin: center;
 }
 
 .button {
   /*Общие стили для кнопок*/
   position: relative;
-  font-family: var(--accent-font, serif);
+  font-family: var(--accent-font, serif), serif;
   font-size: var(--accent-text);
   line-height: var(--text-lh-button);
   border: var(--main-border, 2px solid #000000);
@@ -327,7 +329,7 @@
 
 .button__text {
   /*Текс кнопки карточки*/
-  font-family: var(--accent-font, serif);
+  font-family: var(--accent-font, serif), serif;
   color: var(--bg-accent);
   font-size: var(--accent-text);
   font-weight: 400;
@@ -392,7 +394,7 @@
 
 .dialog-text {
   /*Текст в окне диалога*/
-  font-family: var(--accent-font, serif);
+  font-family: var(--accent-font, serif), serif;
   color: var(--color-accent, #000000);
   font-size: var(--accent-text);
   font-weight: 400;
@@ -444,7 +446,7 @@
     /*Диалоговое окно*/
     max-inline-size: 341px;
     padding: var(--padding-dialog-accent);
-    bottom: -216px;
+    inset: 0;
   }
 
   .dialog[open] {
